@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    container_name: db
+    build:
+      context: .
+      dockerfile: postgres.Dockerfile
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+
+  fastapi:
+    container_name: fastapi
+    build:
+      context: .
+      dockerfile: fastapi.Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
+    command: /bin/bash /app/startup.sh

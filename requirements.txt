@@ -1,0 +1,8 @@
+fastapi==0.103.2
+h3==3.7.6
+uvicorn==0.23.2
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.22
+geoalchemy2==0.14.1
+geojson==3.0.1
+alembic

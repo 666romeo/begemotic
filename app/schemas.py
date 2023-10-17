@@ -1,10 +1,9 @@
 from pydantic import BaseModel
-from typing import List
 
 
 class GeometryData(BaseModel):
     type: str
-    coordinates: List[float]
+    coordinates: list
 
 
 class AggregationRequest(BaseModel):

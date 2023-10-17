@@ -11,7 +11,7 @@ cd csv_data
 python import_data_db.py
 
 Шлем запросы на наши эндпоинты 
-'''
+```
 curl -X POST -H "Content-Type: application/json" -d '{
  "geometry": {
    "type": "Point",
@@ -21,10 +21,10 @@ curl -X POST -H "Content-Type: application/json" -d '{
  "aggr": "sum",
  "r": 4
 }' http://localhost:8000/aggregate_in_radius
-'''
+```
 
 и
-
+```
 curl -X POST -H "Content-Type: application/json" -d '{
  "geometry": {
    "type": "Polygon",
@@ -39,3 +39,4 @@ curl -X POST -H "Content-Type: application/json" -d '{
  "field": "price",
  "aggr": "avg"
 }' http://localhost:8000/aggregate_in_polyfill
+```
